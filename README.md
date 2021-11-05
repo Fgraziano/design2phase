@@ -20,15 +20,6 @@ The core function is called ```PowerIIphase()``` and includes the following argu
 PowerIIphase(pBM,betaBM,pstrata=NULL,betastrata=NULL,acc.aux=NULL,design2p=NULL,N,n,cens=0.1, tau=2,lambda=0.1,k=0.9,B=1000,seed=NULL)
 ```
 
-All possible sampling designs are the following: 
-
-- Simple Random Sampling (SRS), 
-- Case-Control (CC), 
-- Probability Proportional to Size (PPS), 
-- Nested CaseControl (NCC),
-- Countermatching (CM).
-
-Default sampling designs includes SRS and CC designs. 
 The main function has few mandatory parameters (```pBM, betaBM, N, n```); other parameters are set with default, but can be modified according to the setting of interest and the information available from the phase I. 
 
 To perform the simplest scenario:
@@ -81,13 +72,28 @@ It is possible to plot the power curves if the hypothetical sample sizes of the 
 ```r
 PlotPower(perfBM)
 ```
+## Sampling designs
+
+All possible sampling designs are the following: 
+
+- Simple Random Sampling (SRS), 
+- Case-Control (CC), 
+- Probability Proportional to Size (PPS), 
+- Nested CaseControl (NCC),
+- Countermatching (CM).
+
+Default sampling designs includes SRS and CC designs. The argument ```design2p``` allows to add extra sampling designs performed during the sampling process (e.g. ```design2p=c("NCC","PPS")```
+
 ## Stratification Process
 
 ### stratify for the risk factor/confonder
-To consider the stratification for the risk factor, ```betastrata``` (expected beta coefficient, ln(HR)) and ```pstrata``` (the prevalence of the stratum variable) arguments need to be specify in ```PowerIIphase``` function. 
+To consider the stratification for the risk factor, the following rguments need to be specify in ```PowerIIphase``` function:
+- ```betastrata``` (expected beta coefficient, ln(HR)),
+-  ```pstrata``` (the prevalence of the stratum variable). 
 
 ### stratify for the auxiliary variable
-To consider the stratification for auxiliary variaible, ```acc.aux``` ( expected sensibility and specificity (accuracy)) argument need to be specify in ```PowerIIphase``` function. 
+To consider the stratification for auxiliary variable, the following argument need to be specify in ```PowerIIphase``` function:
+- ```acc.aux``` (expected sensibility and specificity (accuracy)).
 
 ## For more details
 
