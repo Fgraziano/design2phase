@@ -87,7 +87,7 @@ Default sampling designs includes SRS and CC designs. The argument ```design2p``
 ## Stratification Process
 
 ### stratify for the risk factor/confonder
-To consider the stratification for the risk factor, the following rguments need to be specify in ```PowerIIphase``` function:
+To consider the stratification for the risk factor, the following arguments need to be specify in ```PowerIIphase``` function:
 - ```betastrata``` (expected beta coefficient, ln(HR)),
 -  ```pstrata``` (the prevalence of the stratum variable). 
 
