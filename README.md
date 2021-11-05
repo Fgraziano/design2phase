@@ -26,12 +26,12 @@ All possible designs are the following:
 Default sampling designs includes SRS and CC designs. 
 The main function has few mandatory parameters (```pBM, betaBM, N, n```); other parameters are set with default, but can be modified according to the setting of interest and the information available from the phase I. 
 
- To perform the simplest scenario: 
+To perform the simplest scenario: 
 
 ```r
 perfBM <- PowerIIphase(betaBM=0.91,  pBM=0.25,  N=400, n=c(80,100,120) , seed=467)
 ```
-The output is:
+The output in ```PowerIIphase object``` is:
 
 ```r
 $PhaseI_events
@@ -63,14 +63,14 @@ CC strat event    1000    120     60 0.761 1.4283
 attr(,"class")
 [1] "PowerIIphase"
 ```
-Information included in the ```PowerIIphase object``` are
+Inclued:
 
-- Expected number of events for phase I 
-- Explored sampling designs
-- Planned sample sizes of phase II (n)
-- Performance over B simulations
+- Expected number of events for phase I ```$PhaseI_events```
+- Explored sampling designs ```$designs```
+- Planned sample sizes of phase II (n) ```$n```
+- Performance over B simulations ```$PhaseII_Performance```
 
-It is possible to plot the power curves in each sampling design by n (the size of phase II)
+It is possible to plot the power curves if n (the size of phase II) is more than 1 
 
 ```r
 PlotPower(perfBM)
