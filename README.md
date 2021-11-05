@@ -83,11 +83,11 @@ PlotPower(perfBM)
 ```
 ## stratification process
 
-### for the risk factor/confonder
-To consider the stratification for the risk factor, ```betastrata``` (expected beta coefficient, ln(HR)) and ```pstrata``` (the prevalence of the stratum variable) arguments need to be specify. 
+### stratify for the risk factor/confonder
+To consider the stratification for the risk factor, ```betastrata``` (expected beta coefficient, ln(HR)) and ```pstrata``` (the prevalence of the stratum variable) arguments need to be specify in ```PowerIIphase``` function. 
 
-### for the auxiliary variable
-To consider the stratification for auxiliary variaible, ```acc.aux``` ( expected sensibility and specificity (accuracy)) argument need to be specify. 
+### stratify for the auxiliary variable
+To consider the stratification for auxiliary variaible, ```acc.aux``` ( expected sensibility and specificity (accuracy)) argument need to be specify in ```PowerIIphase``` function. 
 
 ## For more details
 
