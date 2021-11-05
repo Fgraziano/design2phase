@@ -69,7 +69,7 @@ CC strat event    1000    120     60 0.761 1.4283
 attr(,"class")
 [1] "PowerIIphase"
 ```
-Th output includes:
+The output includes:
 
 - Expected number of events for phase I ```$PhaseI_events```
 - Explored sampling designs ```$designs```
