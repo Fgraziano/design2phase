@@ -81,7 +81,7 @@ It is possible to plot the power curves if the hypothetical sample sizes of the 
 ```r
 PlotPower(perfBM)
 ```
-## stratification process
+## Stratification Process
 
 ### stratify for the risk factor/confonder
 To consider the stratification for the risk factor, ```betastrata``` (expected beta coefficient, ln(HR)) and ```pstrata``` (the prevalence of the stratum variable) arguments need to be specify in ```PowerIIphase``` function. 
