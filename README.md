@@ -81,6 +81,14 @@ It is possible to plot the power curves if the hypothetical sample sizes of the 
 ```r
 PlotPower(perfBM)
 ```
+## stratification process
+
+### for the risk factor/confonder
+To consider the stratification for the risk factor, ```betastrata``` (expected beta coefficient, ln(HR)) and ```pstrata``` (the prevalence of the stratum variable) arguments need to be specify. 
+
+### for the auxiliary variable
+To consider the stratification for auxiliary variaible, ```acc.aux``` ( expected sensibility and specificity (accuracy)) argument need to be specify. 
+
 ## For more details
 
 ```r
