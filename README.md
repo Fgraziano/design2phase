@@ -23,7 +23,7 @@ All possible designs are the following:
 - Countermatching (CM).
 
 Default sampling designs includes SRS and CC designs. 
-The main function has few mandatory parameters (pBM, betaBM, N, n); other parameters are set with default, but can be modified according to the setting of interest and the information available from the phase I. 
+The main function has few mandatory parameters (```r pBM, betaBM, N, n```); other parameters are set with default, but can be modified according to the setting of interest and the information available from the phase I. 
 
  To perform the simplest scenario: 
 
