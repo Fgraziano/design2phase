@@ -76,7 +76,7 @@ Th output included:
 - Planned sample sizes of phase II (n) ```$n```
 - Performance over B simulations ```$PhaseII_Performance```
 
-It is possible to plot the power curves if n (the size of phase II) is more than 1 
+It is possible to plot the power curves if the hypothetical sample sizes of the subsample n are at least 2 
 
 ```r
 PlotPower(perfBM)
