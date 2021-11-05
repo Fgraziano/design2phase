@@ -15,7 +15,7 @@ library("design2phase")
 
 ## Basic usage
 
-All possible designs are the following: 
+All possible sampling designs are the following: 
 
 - Simple Random Sampling (SRS), 
 - Case-Control (CC), 
