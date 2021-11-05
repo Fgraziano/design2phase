@@ -82,7 +82,7 @@ All possible sampling designs are the following:
 - Nested CaseControl (NCC),
 - Countermatching (CM).
 
-Default sampling designs includes SRS and CC designs. The argument ```design2p``` allows to add extra sampling designs performed during the sampling process (e.g. ```design2p=c("NCC","PPS")```
+Default sampling designs includes SRS and CC designs. The argument ```design2p``` allows to add extra sampling designs performed during the sampling process (e.g. ```design2p=c("NCC","PPS")```)
 
 ## Stratification Process
 
