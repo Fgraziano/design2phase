@@ -1,0 +1,4 @@
+PlotPower               Plot power based on estimate obtained from
+                        PowerIIphase function
+PowerIIphase            Power estimation via simulation for two-phase
+                        sampling designs
