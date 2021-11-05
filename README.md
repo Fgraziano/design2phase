@@ -15,6 +15,11 @@ library("design2phase")
 
 ## Basic usage
 
+The core function is called ```PowerIIphase()``` and includes the following arguments:
+```r
+PowerIIphase(pBM,betaBM,pstrata=NULL,betastrata=NULL,acc.aux=NULL,design2p=NULL,N,n,cens=0.1, tau=2,lambda=0.1,k=0.9,B=1000,seed=NULL)
+```
+
 All possible sampling designs are the following: 
 
 - Simple Random Sampling (SRS), 
@@ -26,11 +31,12 @@ All possible sampling designs are the following:
 Default sampling designs includes SRS and CC designs. 
 The main function has few mandatory parameters (```pBM, betaBM, N, n```); other parameters are set with default, but can be modified according to the setting of interest and the information available from the phase I. 
 
-To perform the simplest scenario: 
+To perform the simplest scenario:
 
 ```r
 perfBM <- PowerIIphase(betaBM=0.91,  pBM=0.25,  N=400, n=c(80,100,120) , seed=467)
 ```
+
 The output in ```PowerIIphase object``` is:
 
 ```r
