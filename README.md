@@ -10,6 +10,7 @@ This is the development version of the package. It can be installed from github 
 
 ```r
 devtools::install_github("Fgraziano/design2phase")
+library("design2phase")
 ```
 
 ## Basic usage
