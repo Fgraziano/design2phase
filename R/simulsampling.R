@@ -279,11 +279,12 @@ simulsampling<-function(betaBM, pBM, pstrata,betastrata,acc.aux, cens,tau,N,n,la
 
     IDCASE<-campione$id[campione$Set %in% SetId & campione$Fail=="1"]
     IDContr<-campione$id[campione$Set %in% SetId & campione$Fail=="0"]
-
     dati$sampleidstat<-ifelse(dati$id %in% IDCASE,2,ifelse(dati$id %in% IDContr,1,0))
-
     dati$pro<-KMprob(dati$time,dati$sampleidstat,m=1);
-    pCas<-length(IDCASE)/(length(dati$id[dati$censor=="1"]))
+
+    DATse<-dati[dati$incl==1,]
+      
+    pCas<-table(DATse$censor)[2]/(length(dati$id[dati$censor=="1"]));
     dati$pro<-ifelse(dati$censor=="1", pCas,dati$pro)
     dati$incl<-ifelse(dati$id %in% c(IDCASE,IDContr),1,0)
 
@@ -295,7 +296,7 @@ simulsampling<-function(betaBM, pBM, pstrata,betastrata,acc.aux, cens,tau,N,n,la
     VAR_d<-sample.est[1]^2
     DEFF<- VAR_srs/VAR_d
 
-    DATse<-dati[dati$incl==1,]
+    
 
     py<-round(table(DATse$censor)[2],1)
 
