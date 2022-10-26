@@ -283,7 +283,7 @@ simulsampling<-function(betaBM, pBM, pstrata,betastrata,acc.aux, cens,tau,N,n,la
     dati$pro<-KMprob(dati$time,dati$sampleidstat,m=1);
 
     DATse<-dati[dati$incl==1,]
-      
+    py<-round(table(DATse$censor)[2],1)
     pCas<-table(DATse$censor)[2]/(length(dati$id[dati$censor=="1"]));
     dati$pro<-ifelse(dati$censor=="1", pCas,dati$pro)
     dati$incl<-ifelse(dati$id %in% c(IDCASE,IDContr),1,0)
@@ -295,10 +295,6 @@ simulsampling<-function(betaBM, pBM, pstrata,betastrata,acc.aux, cens,tau,N,n,la
     invisible(capture.output(sample.est<- summary(Fit)$coefficients[,c("robust se","Pr(>|z|)")]))
     VAR_d<-sample.est[1]^2
     DEFF<- VAR_srs/VAR_d
-
-    
-
-    py<-round(table(DATse$censor)[2],1)
 
     NCC_1<-rbind(NCC_1,c(sample=i,round(length(DATse$x1),1),py,  sample.est,DEFF))
     colnames(NCC_1)<-c("sample", "n", "n.event", "se.coef",  "pvalue","DEFF")}
