@@ -282,12 +282,12 @@ simulsampling<-function(betaBM, pBM, pstrata,betastrata,acc.aux, cens,tau,N,n,la
     dati$sampleidstat<-ifelse(dati$id %in% IDCASE,2,ifelse(dati$id %in% IDContr,1,0))
     dati$pro<-KMprob(dati$time,dati$sampleidstat,m=1);
 
+    dati$incl<-ifelse(dati$id %in% c(IDCASE,IDContr),1,0)
     DATse<-dati[dati$incl==1,]
     py<-round(table(DATse$censor)[2],1)
     pCas<-table(DATse$censor)[2]/(length(dati$id[dati$censor=="1"]));
     dati$pro<-ifelse(dati$censor=="1", pCas,dati$pro)
-    dati$incl<-ifelse(dati$id %in% c(IDCASE,IDContr),1,0)
-
+  
     des<-twophase(id=list(~id,~id),subset=~incl==1,probs=list(NULL,~pro),data=dati)
 
     Fit<-suppressWarnings(svycoxph(Surv(time,censor)~x1 , des))
